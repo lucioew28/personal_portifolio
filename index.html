@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lúcio Ewald</title>
+  
+  <!-- css -->
+  <link href="./dist/output.css" rel="stylesheet">
+
+  <!-- alipejs -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="bg-black font-mono">
+  <header x-data="{ mobile_menu : false }">
+    <div class="fixed z-[999] w-full bg-black shadow-[0px_-182px_191px_36px_rgba(255,255,255,1)]">
+      <div class="max-w-[1024px] mx-auto px-5 py-5">      
+        <div class="sm:block hidden">
+          <nav class="text-white flex items-center justify-between">
+            <div class="uppercase text-xl border-2 border-white w-[40px] h-[40px] flex items-center justify-center">
+              l
+            </div>
+            <ul class="flex items-center gap-12 text-xs">
+              <li>
+                <a class="hover:text-blue-400" href=""><span class="text-blue-400 mr-2">01.</span>about</a>
+              </li>
+              <li>
+                <a class="hover:text-blue-400" href=""><span class="text-blue-400 mr-2">02.</span>Experience</a>
+              </li>
+              <li>
+                <a class="hover:text-blue-400" href=""><span class="text-blue-400 mr-2">03.</span>Work</a>
+              </li>
+              <li>
+                <a class="hover:text-blue-400" href=""><span class="text-blue-400 mr-2">04.</span>Contact</a>
+              </li>
+              <li>
+                <a href="" class="border border-blue-400 px-5 py-3 text-blue-400 hover:bg-[#24446a] transition-all duration-500">Resume</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sm:hidden block">
+          <nav class="relative text-white flex items-center justify-between">
+            <div class="uppercase text-xl border-2 border-white w-[40px] h-[40px] flex items-center justify-center">
+              l
+            </div>
+            <div @click="mobile_menu = !mobile_menu" class="flex flex-col items-end justify-center gap-2 w-[40px h-[40px]]">
+              <div :class="mobile_menu ? 'rotate-45 absolute w-[40px]' : 'w-[40px]' " class="h-[2px] bg-white transition-all duration-500"></div>
+              <div :class="mobile_menu ? '-rotate-45 absolute w-[40px]' : 'w-[30px]' " class="h-[2px] bg-white transition-all duration-500"></div>
+              <div :class="mobile_menu ? 'w-[0px]' : 'w-[20px]' " class="h-[2px] bg-white transition-all duration-500"></div>
+            </div>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+    <ul :class="mobile_menu ? 'top-0' : 'top-[-800px]'" class="z-[99] transition-all duration-500 absolute left-0 w-full h-[100vh] flex flex-col items-center justify-center gap-12 text-xs bg-black text-white">
+      <li>
+        <a class="hover:text-blue-400" href=""><span class="text-blue-400 mr-2">01</span>about</a>
+      </li>
+      <li>
+        <a class="hover:text-blue-400" href=""><span class="text-blue-400 mr-2">02</span>Experience</a>
+      </li>
+      <li>
+        <a class="hover:text-blue-400" href=""><span class="text-blue-400 mr-2">03</span>Work</a>
+      </li>
+      <li>
+        <a class="hover:text-blue-400" href=""><span class="text-blue-400 mr-2">04</span>Contact</a>
+      </li>
+      <li>
+        <a href="" class="border border-blue-400 px-5 py-3 text-blue-400 hover:bg-[#24446a] transition-all duration-500">Resume</a>
+      </li>
+    </ul>
+  </header>
+  
+
+  <main>
+    <div class="max-w-[1024px] mx-auto px-5 py-5">
+      <div class="h-[100vh] w-full text-white flex flex-col items-start justify-center">
+        <p class="text-md text-blue-400 font-sans sm:mb-8 mb-4">Hi, my name is</p>
+        <p class="sm:text-6xl text-4xl font-sans">Lúcio Ewald.</p>
+        <p class="sm:text-6xl text-4xl text-gray-400 font-sans sm:mb-8 mb-4">A software developer from Brazil.</p>
+        <p class="text-md font-sans max-w-[500px] mb-4">
+          I am a software developer focused on building exceptional digital experiences. My specialty lies in creating accessible, 
+          human-centered products. Currently, I am dedicated to building innovative software solutions at Banestes.
+        </p>
+        <div class="flex gap-8">
+          <a class="group" href="https://github.com/lucioew28" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
+              <path class="stroke-white group-hover:stroke-blue-400"  fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.475 2 2 6.475 2 12C2 16.425 4.8625 20.1625 8.8375 21.4875C9.3375 21.575 9.525 21.275 9.525 21.0125C9.525 20.775 9.5125 19.9875 9.5125 19.15C7 19.6125 6.35 18.5375 6.15 17.975C6.0375 17.6875 5.55 16.8 5.125 16.5625C4.775 16.375 4.275 15.9125 5.1125 15.9C5.9 15.8875 6.4625 16.625 6.65 16.925C7.55 18.4375 8.9875 18.0125 9.5625 17.75C9.65 17.1 9.9125 16.6625 10.2 16.4125C7.975 16.1625 5.65 15.3 5.65 11.475C5.65 10.3875 6.0375 9.4875 6.675 8.7875C6.575 8.5375 6.225 7.5125 6.775 6.1375C6.775 6.1375 7.6125 5.875 9.525 7.1625C10.325 6.9375 11.175 6.825 12.025 6.825C12.875 6.825 13.725 6.9375 14.525 7.1625C16.4375 5.8625 17.275 6.1375 17.275 6.1375C17.825 7.5125 17.475 8.5375 17.375 8.7875C18.0125 9.4875 18.4 10.375 18.4 11.475C18.4 15.3125 16.0625 16.1625 13.8375 16.4125C14.2 16.725 14.5125 17.325 14.5125 18.2625C14.5125 19.6 14.5 20.675 14.5 21.0125C14.5 21.275 14.6875 21.5875 15.1875 21.4875C17.1727 20.8173 18.8977 19.5415 20.1198 17.8395C21.3419 16.1376 21.9995 14.0953 22 12C22 6.475 17.525 2 12 2Z" stroke="#fff" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="group" href="https://www.linkedin.com/in/lucioew/" target="_blank">
+            <svg class="fill-white group-hover:fill-blue-400" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 1920 1920">
+              <path d="M1168 601.321v74.955c72.312-44.925 155.796-71.11 282.643-71.11 412.852 0 465.705 308.588 465.705 577.417v733.213L1438.991 1920v-701.261c0-117.718-42.162-140.06-120.12-140.06-74.114 0-120.12 23.423-120.12 140.06V1920l-483.604-4.204V601.32H1168Zm-687.52-.792v1318.918H0V600.53h480.48Zm-120.12 120.12H120.12v1078.678h240.24V720.65Zm687.52.792H835.267v1075.316l243.364 2.162v-580.18c0-226.427 150.51-260.18 240.24-260.18 109.55 0 240.24 45.165 240.24 260.18v580.18l237.117-2.162v-614.174c0-333.334-93.573-457.298-345.585-457.298-151.472 0-217.057 44.925-281.322 98.98l-16.696 14.173H1047.88V721.441ZM240.24 0c132.493 0 240.24 107.748 240.24 240.24 0 132.493-107.747 240.24-240.24 240.24C107.748 480.48 0 372.733 0 240.24 0 107.748 107.748 0 240.24 0Zm0 120.12c-66.186 0-120.12 53.934-120.12 120.12s53.934 120.12 120.12 120.12 120.12-53.934 120.12-120.12-53.934-120.12-120.12-120.12Z" fill-rule="evenodd"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-[1024px] mx-auto px-5 py-5">
+      d
+    </div>
+
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
